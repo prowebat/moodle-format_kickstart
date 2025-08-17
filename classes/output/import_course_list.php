@@ -141,7 +141,7 @@ class import_course_list implements \templatable, \renderable {
                 }
 
                 // Get category path.
-                $category = \core_course_category::get($courseinfo->category);
+                $category = \core_course_category::get($courseinfo->category, alwaysreturnhidden: true);
                 $categorypath = $category->get_nested_name(false, ' > ');
 
                 $path = $categorypath. " > ".$courseinfo->get_formatted_shortname();
